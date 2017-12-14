@@ -9,12 +9,12 @@ function getById(data, id) {
     if (data[i].id == id) {
       return data[i];
     }
-  }
+  };
   return null;
 };
 
 app.get("/", (request, response) => {
-  response.json(data);
+  response.json({ data });
 });
 
 app.get("/:id", (request, response) => {
@@ -26,7 +26,7 @@ app.get("/:id", (request, response) => {
       }
     });
   } else {
-    response.json(record);
+    response.json({ data: record });
   }
 });
 
